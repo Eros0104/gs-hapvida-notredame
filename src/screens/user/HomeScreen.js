@@ -25,6 +25,7 @@ import category from "../../data/categories";
 import productsData from "../../data/products";
 import * as actionCreaters from "../../states/actionCreaters/actionCreaters";
 import CartButton from "../../components/CartButton";
+import ServicesSection from "../../components/ServicesSection";
 
 const slides = [
   require("../../assets/image/banners/banner.png"),
@@ -148,6 +149,7 @@ const HomeScreen = ({
           </View>
         </View>
         <ScrollView nestedScrollEnabled={true}>
+          <ServicesSection />
           {/* <View style={styles.promotiomSliderContainer}>
             <SliderBox
               images={slides}
@@ -237,7 +239,7 @@ export default HomeScreen;
 const styles = StyleSheet.create({
   container: {
     width: "100%",
-    backgroundColor: colors.light,
+    backgroundColor: colors.white,
     alignItems: "center",
     justifyContent: "flex-start",
     paddingBottom: 0,

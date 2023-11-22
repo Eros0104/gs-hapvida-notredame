@@ -37,16 +37,7 @@ const Routes = () => {
         <Stack.Screen name="cart" component={CartScreen} />
         <Stack.Screen name="checkout" component={CheckoutScreen} />
         <Stack.Screen name="orderconfirm" component={OrderConfirmScreen} />
-
-        {/* <Stack.Screen name="myorder" component={MyOrderScreen} /> */}
-
-        {/* <Stack.Screen name="myorderdetail" component={MyOrderDetailScreen} /> */}
-
-        {/* <Stack.Screen
-          name="vieworderdetails"
-          component={ViewOrderDetailScreen}
-        /> */}
-        {/* <Stack.Screen name="categories" component={CategoriesScreen} /> */}
+        
       </Stack.Navigator>
     </NavigationContainer>
   );
