@@ -6,7 +6,6 @@ import { Ionicons } from "@expo/vector-icons";
 import { colors } from "../../constants";
 import HomeScreen from "../../screens/user/HomeScreen";
 import UserProfileScreen from "../../screens/profile/UserProfileScreen";
-import MyOrderScreen from "../../screens/user/MyOrderScreen";
 import CategoriesScreen from "../../screens/user/CategoriesScreen";
 
 const Tab = createBottomTabNavigator();
@@ -32,12 +31,12 @@ const Tabs = ({ route }) => {
           let icon;
           if (routename === "home") {
             icon = "home-outline";
-          } else if (routename === "categories") {
-            icon = "apps-outline";
-          } else if (routename === "myorder") {
-            icon = "cart-outline";
-          } else if (routename === "user") {
-            icon = "person-outline";
+          } else if (routename === "calendars") {
+            icon = "calendar-outline";
+          } else if (routename === "chat") {
+            icon = "chatbox-ellipses-outline";
+          } else if (routename === "settings") {
+            icon = "settings-outline";
           }
 
           return (
@@ -68,7 +67,7 @@ const Tabs = ({ route }) => {
         }}
       />
       <Tab.Screen
-        name="categories"
+        name="calendars"
         component={CategoriesScreen}
         initialParams={{ user: user }}
         tabBarOptions={{
@@ -80,13 +79,13 @@ const Tabs = ({ route }) => {
       />
       {
         <Tab.Screen
-          name="myorder"
-          component={MyOrderScreen}
+          name="chat"
+          component={HomeScreen}
           initialParams={{ user: user }}
         />
       }
       <Tab.Screen
-        name="user"
+        name="settings"
         component={UserProfileScreen}
         initialParams={{ user: user }}
       />
