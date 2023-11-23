@@ -2,35 +2,21 @@ import {
   StyleSheet,
   StatusBar,
   View,
-  TouchableOpacity,
   Text,
-  Image,
   FlatList,
   RefreshControl,
   ScrollView,
 } from "react-native";
 import React, { useEffect, useState } from "react";
-import { Ionicons } from "@expo/vector-icons";
-import SearchableDropdown from "react-native-searchable-dropdown";
-import { useSelector, useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
 import { bindActionCreators } from "redux";
-// TODO: Replace the following library:
-// import { SliderBox } from "react-native-image-slider-box";
-import scanIcon from "../../assets/icons/scan_icons.png";
-import easybuylogo from "../../assets/logo/ecomarket-logo.png";
 import { colors } from "../../constants";
 import CustomIconButton from "../../components/CustomIconButton/CustomIconButton";
 import ProductCard from "../../components/ProductCard/ProductCard";
 import category from "../../data/categories";
 import productsData from "../../data/products";
 import * as actionCreaters from "../../states/actionCreaters/actionCreaters";
-import CartButton from "../../components/CartButton";
 import ServicesSection from "../../components/ServicesSection";
-
-const slides = [
-  require("../../assets/image/banners/banner.png"),
-  require("../../assets/image/banners/banner.png"),
-];
 
 const HomeScreen = ({
   navigation,
@@ -40,10 +26,7 @@ const HomeScreen = ({
 }) => {
   const [products, setProducts] = useState([]);
   const [refeshing, setRefreshing] = useState(false);
-  const [error, setError] = useState("");
   const [userInfo, setUserInfo] = useState({});
-  const [searchItems, setSearchItems] = useState([]);
-  const cartproduct = useSelector((state) => state.product);
   const dispatch = useDispatch();
 
   const { addCartItem } = bindActionCreators(actionCreaters, dispatch);
@@ -87,79 +70,14 @@ const HomeScreen = ({
   return (
     <View style={styles.container}>
       <StatusBar></StatusBar>
-      <View style={styles.topBarContainer}>
-        <TouchableOpacity disabled>
-          <Ionicons name="menu" size={30} color={colors.muted} />
-        </TouchableOpacity>
-        <View style={styles.topbarlogoContainer}>
-          <Image source={easybuylogo} style={styles.logo} />
-        </View>
-
-        <CartButton />
-      </View>
+    
       <View style={styles.bodyContainer}>
-        <View style={styles.searchContainer}>
-          <View style={styles.inputContainer}>
-            <SearchableDropdown
-              onTextChange={(text) => console.log(text)}
-              onItemSelect={(item) => handleProductPress(item)}
-              defaultIndex={0}
-              containerStyle={{
-                borderRadius: 5,
-                width: "100%",
-                elevation: 5,
-                position: "absolute",
-                zIndex: 20,
-                top: -20,
-                maxHeight: 300,
-                backgroundColor: colors.light,
-              }}
-              textInputStyle={{
-                borderRadius: 10,
-                padding: 6,
-                paddingLeft: 10,
-                borderWidth: 0,
-                backgroundColor: colors.white,
-                height: 40,
-              }}
-              itemStyle={{
-                padding: 10,
-                marginTop: 2,
-                backgroundColor: colors.white,
-                borderColor: colors.muted,
-              }}
-              itemTextStyle={{
-                color: colors.muted,
-              }}
-              itemsContainerStyle={{
-                maxHeight: "100%",
-              }}
-              items={searchItems}
-              placeholder="Search..."
-              resetValue={false}
-              underlineColorAndroid="transparent"
-            />
-            {/* <CustomInput radius={5} placeholder={"Search...."} /> */}
-          </View>
-          <View style={styles.buttonContainer}>
-            <TouchableOpacity style={styles.scanButton}>
-              <Text style={styles.scanButtonText}>Scan</Text>
-              <Image source={scanIcon} style={{ width: 20, height: 20 }} />
-            </TouchableOpacity>
-          </View>
-        </View>
         <ScrollView nestedScrollEnabled={true}>
+          <View style={styles.primaryTextContainer}>
+            <Text style={styles.primaryText}>Serviços</Text>
+          </View>
           <ServicesSection />
-          {/* <View style={styles.promotiomSliderContainer}>
-            <SliderBox
-              images={slides}
-              sliderBoxHeight={140}
-              dotColor={colors.primary}
-              inactiveDotColor={colors.muted}
-              paginationBoxVerticalPadding={10}
-              autoplayInterval={6000}
-            />
-          </View> */}
+
           <View style={styles.primaryTextContainer}>
             <Text style={styles.primaryText}>Categories</Text>
           </View>
@@ -244,14 +162,6 @@ const styles = StyleSheet.create({
     justifyContent: "flex-start",
     paddingBottom: 0,
     flex: 1,
-  },
-  topBarContainer: {
-    width: "100%",
-    display: "flex",
-    flexDirection: "row",
-    justifyContent: "space-between",
-    alignItems: "center",
-    padding: 20,
   },
   toBarText: {
     fontSize: 15,

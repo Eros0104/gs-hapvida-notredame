@@ -18,7 +18,7 @@ const servicesAvailable = [
   },
   {
     label: "Farmácia",
-    icon: "storefront",
+    icon: "heart-circle-outline",
     backgroundColor: "#17cb86"
   },
   {
