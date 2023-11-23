@@ -17,6 +17,7 @@ import category from "../../data/categories";
 import productsData from "../../data/products";
 import * as actionCreaters from "../../states/actionCreaters/actionCreaters";
 import ServicesSection from "../../components/ServicesSection";
+import NextAppointment from "../../components/NextAppointment";
 
 const HomeScreen = ({
   navigation,
@@ -77,6 +78,11 @@ const HomeScreen = ({
             <Text style={styles.primaryText}>Serviços</Text>
           </View>
           <ServicesSection />
+
+          <View style={styles.primaryTextContainer}>
+            <Text style={styles.primaryText}>Próximos Agendamentos</Text>
+          </View>
+          <NextAppointment />
 
           <View style={styles.primaryTextContainer}>
             <Text style={styles.primaryText}>Categories</Text>

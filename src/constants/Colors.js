@@ -10,8 +10,8 @@ export default colors = {
   shadow: "#E7E8EA",
   warning: "#FBD431",
   info: "#F8F9FA",
-  light: "#F5F5F5",
   dark: "#343A3F",
   muted: "#707981",
+  light: "#fafafb",
   white: "#FFFFFF",
 };
