@@ -1,12 +1,11 @@
-import { Image, TouchableOpacity } from "react-native";
+import { TouchableOpacity } from "react-native";
 import React from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { Ionicons } from "@expo/vector-icons";
-
 import { colors } from "../../constants";
 import HomeScreen from "../../screens/user/HomeScreen";
 import UserProfileScreen from "../../screens/profile/UserProfileScreen";
-import CategoriesScreen from "../../screens/user/CategoriesScreen";
+import AppointmentsScreen from "../../screens/user/AppointmentsScreen";
 
 const Tab = createBottomTabNavigator();
 
@@ -68,7 +67,7 @@ const Tabs = ({ route }) => {
       />
       <Tab.Screen
         name="calendars"
-        component={CategoriesScreen}
+        component={AppointmentsScreen}
         initialParams={{ user: user }}
         tabBarOptions={{
           tabBarHideOnKeyboard: true,

@@ -1,9 +1,18 @@
-import { StyleSheet, Text, TouchableOpacity } from "react-native";
+import { Text, TouchableOpacity } from "react-native";
 import React from "react";
+import styles from "./styles";
+import Colors from "../../constants/Colors";
+import { getTextContrastColor } from "../../utils";
 
-import { colors } from "../../constants";
+const CustomButton = ({
+  text,
+  onPress,
+  disabled = false,
+  color = "primary",
+}) => {
+  const backgroundColor = Colors[color];
+  const textColor = getTextContrastColor(backgroundColor);
 
-const CustomButton = ({ text, onPress, disabled = false }) => {
   return (
     <>
       {disabled == true ? (
@@ -15,8 +24,11 @@ const CustomButton = ({ text, onPress, disabled = false }) => {
           <Text style={styles.buttonTextDisabled}>{text}</Text>
         </TouchableOpacity>
       ) : (
-        <TouchableOpacity style={styles.container} onPress={onPress}>
-          <Text style={styles.buttonText}>{text}</Text>
+        <TouchableOpacity
+          style={[styles.container, { backgroundColor }]}
+          onPress={onPress}
+        >
+          <Text style={[styles.buttonText, { color: textColor }]}>{text}</Text>
         </TouchableOpacity>
       )}
     </>
@@ -24,30 +36,3 @@ const CustomButton = ({ text, onPress, disabled = false }) => {
 };
 
 export default CustomButton;
-
-const styles = StyleSheet.create({
-  container: {
-    padding: 15,
-    width: "100%",
-    marginBottom: 10,
-    alignItems: "center",
-    borderRadius: 10,
-    backgroundColor: colors.primary,
-  },
-  buttonText: {
-    fontWeight: "bold",
-    color: "#fff",
-  },
-  containerDisabled: {
-    padding: 15,
-    width: "100%",
-    marginBottom: 10,
-    alignItems: "center",
-    borderRadius: 10,
-    backgroundColor: colors.muted,
-  },
-  buttonTextDisabled: {
-    fontWeight: "bold",
-    color: colors.light,
-  },
-});
