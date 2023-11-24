@@ -28,20 +28,20 @@ const ForgetPasswordScreen = ({ navigation }) => {
       </View>
       <View style={styles.screenNameContainer}>
         <View>
-          <Text style={styles.screenNameText}>Reset Password</Text>
+          <Text style={styles.screenNameText}>Redefinir Senha</Text>
         </View>
         <View>
           <Text style={styles.screenNameParagraph}>
-            Enter the email associated with your account and we'll send an email
-            with instruction to reset the password.
+            Insira o e-mail associado à sua conta e enviaremos um e-mail com
+            instruções para redefinir a senha.
           </Text>
         </View>
       </View>
       <View style={styles.formContainer}>
-        <CustomInput placeholder={"Enter your Email Address"} />
+        <CustomInput placeholder={"Insira seu endereço de e-mail"} />
       </View>
       <CustomButton
-        text={"Send Instruction"}
+        text={"Enviar Instruções"}
         onPress={sendInstructionsHandle}
         radius={5}
       />
