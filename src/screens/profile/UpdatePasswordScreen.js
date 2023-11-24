@@ -72,11 +72,11 @@ const UpdatePasswordScreen = ({ navigation, route }) => {
       </View>
       <View style={styles.screenNameContainer}>
         <View>
-          <Text style={styles.screenNameText}>Update Password</Text>
+          <Text style={styles.screenNameText}>Alterar senha</Text>
         </View>
         <View>
           <Text style={styles.screenNameParagraph}>
-            Your new password must be different from previous used password
+            Sua nova senha não pode ser igual a senha anterior
           </Text>
         </View>
       </View>
@@ -85,24 +85,24 @@ const UpdatePasswordScreen = ({ navigation, route }) => {
         <CustomInput
           value={currentPassword}
           setValue={setCurrentPassword}
-          placeholder={"Current Password"}
+          placeholder={"Senha atual"}
           secureTextEntry={true}
         />
         <CustomInput
           value={newPassword}
           setValue={setNewPassword}
-          placeholder={"New Password"}
+          placeholder={"Nova senha"}
           secureTextEntry={true}
         />
         <CustomInput
           value={confirmPassword}
           setValue={setConfirmPassword}
-          placeholder={"Confirm New Password"}
+          placeholder={"Confirme a nova senha"}
           secureTextEntry={true}
         />
       </View>
       <CustomButton
-        text={"Update Password"}
+        text={"Alterar senha"}
         onPress={updatePasswordHandle}
         radius={5}
       />
