@@ -78,7 +78,7 @@ const MyAccountScreen = ({ navigation, route }) => {
         </TouchableOpacity>
       </View>
       <View style={styles.screenNameContainer}>
-        <Text style={styles.screenNameText}>My Account</Text>
+        <Text style={styles.screenNameText}>Minha Conta</Text>
       </View>
       <View style={styles.UserProfileCardContianer}>
         <UserProfileCard
@@ -89,7 +89,7 @@ const MyAccountScreen = ({ navigation, route }) => {
       </View>
       <View style={styles.OptionsContainer}>
         <OptionList
-          text={"Change Password"}
+          text={"Mudar senha"}
           Icon={Ionicons}
           iconName={"key-sharp"}
           onPress={
@@ -100,7 +100,7 @@ const MyAccountScreen = ({ navigation, route }) => {
           }
         />
         <OptionList
-          text={"Delete My Account"}
+          text={"Apagar minha conta"}
           Icon={MaterialIcons}
           iconName={"delete"}
           type={"danger"}

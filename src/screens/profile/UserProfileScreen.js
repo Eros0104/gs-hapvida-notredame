@@ -31,13 +31,8 @@ const UserProfileScreen = ({ navigation, route }) => {
   return (
     <View style={styles.container}>
       <StatusBar style="auto"></StatusBar>
-      <View style={styles.TopBarContainer}>
-        <TouchableOpacity>
-          <Ionicons name="menu-sharp" size={30} color={colors.primary} />
-        </TouchableOpacity>
-      </View>
       <View style={styles.screenNameContainer}>
-        <Text style={styles.screenNameText}>Profile</Text>
+        <Text style={styles.screenNameText}>Configurações</Text>
       </View>
       <View style={styles.UserProfileCardContianer}>
         <UserProfileCard
@@ -48,24 +43,11 @@ const UserProfileScreen = ({ navigation, route }) => {
       </View>
       <View style={styles.OptionsContainer}>
         <OptionList
-          text={"My Account"}
+          text={"Minha conta"}
           Icon={Ionicons}
           iconName={"person"}
           onPress={() => navigation.navigate("myaccount", { user: userInfo })}
         />
-        {/* <OptionList
-          text={"Settings"}
-          Icon={Ionicons}
-          iconName={"settings-sharp"}
-          onPress={() => console.log("working....")}
-        />
-        <OptionList
-          text={"Help Center"}
-          Icon={Ionicons}
-          iconName={"help-circle"}
-          onPress={() => console.log("working....")}
-        /> */}
-        {/* !For future use ---- End */}
         <OptionList
           text={"Logout"}
           Icon={Ionicons}
