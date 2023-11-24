@@ -1,23 +1,19 @@
-import {
-  StyleSheet,
-  StatusBar,
-  View,
-  Text,
-  ScrollView,
-} from "react-native";
+import { StyleSheet, StatusBar, View, Text, ScrollView } from "react-native";
 import React from "react";
 import { colors } from "../../constants";
 import ServicesSection from "../../components/ServicesSection";
 import NextAppointment from "../../components/NextAppointment";
+import HomeBanner from "../../components/HomeBanner";
 
 const HomeScreen = () => {
-
   return (
     <View style={styles.container}>
       <StatusBar></StatusBar>
-    
+
       <View style={styles.bodyContainer}>
-        <ScrollView nestedScrollEnabled={true} style={{ paddingHorizontal: 10 }}>
+        <ScrollView nestedScrollEnabled={true} style={styles.scrollView}>
+          <HomeBanner />
+
           <View style={styles.primaryTextContainer}>
             <Text style={styles.primaryText}>Serviços</Text>
           </View>
@@ -68,5 +64,8 @@ const styles = StyleSheet.create({
     height: 50,
     marginTop: 10,
     marginLeft: 10,
+  },
+  scrollView: {
+    padding: 20,
   },
 });

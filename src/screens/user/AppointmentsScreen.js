@@ -85,7 +85,7 @@ const AppointmentsScreen = () => {
 
   return (
     <View style={styles.container}>
-      <ScrollView nestedScrollEnabled={true} style={{ paddingHorizontal: 10 }}>
+      <ScrollView nestedScrollEnabled={true} style={styles.scrollView}>
         <Text style={styles.mainTitle}>Agendas</Text>
         <View style={styles.filterPills}>
           {filterPills.map((pill, index) => (
@@ -171,5 +171,8 @@ const styles = StyleSheet.create({
   },
   disabledFilterPill: {
     backgroundColor: colors.light,
+  },
+  scrollView: {
+    paddingHorizontal: 20,
   },
 });
