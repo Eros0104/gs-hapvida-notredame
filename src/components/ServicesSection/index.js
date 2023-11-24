@@ -2,6 +2,7 @@ import { View, Text, FlatList } from "react-native";
 import availableServices from "./config";
 import styles from "./styles";
 import { Ionicons } from "@expo/vector-icons";
+import { getTextContrastColor } from "../../utils"
 
 const ServicesSection = ({}) => {
   return (
@@ -28,7 +29,7 @@ const ServicesSection = ({}) => {
                 },
               ]}
             >
-              <Ionicons name={item.icon} size={24}  />
+              <Ionicons name={item.icon} size={24} color={getTextContrastColor(item.backgroundColor)}  />
             </View>
             <Text style={styles.itemLabel}>{item.label}</Text>
           </View>
