@@ -17,7 +17,7 @@ const HomeScreen = () => {
       <StatusBar></StatusBar>
     
       <View style={styles.bodyContainer}>
-        <ScrollView nestedScrollEnabled={true}>
+        <ScrollView nestedScrollEnabled={true} style={{ paddingHorizontal: 10 }}>
           <View style={styles.primaryTextContainer}>
             <Text style={styles.primaryText}>Serviços</Text>
           </View>
@@ -50,7 +50,7 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   primaryTextContainer: {
-    padding: 20,
+    paddingVertical: 20,
     display: "flex",
     flexDirection: "row",
     justifyContent: "flex-start",
