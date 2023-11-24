@@ -38,6 +38,7 @@ const AppointmentCard = ({ buttons, doctorData, schedulingData }) => {
         <View style={styles.buttonsContainer}>
           {buttons.map((button, index) => (
             <View
+              key={button.label}
               style={[
                 styles.buttonContainer,
                 index === 0 ? styles.leftButton : styles.rightButton,
