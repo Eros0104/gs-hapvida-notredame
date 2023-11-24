@@ -1,10 +1,10 @@
 {
   "expo": {
-    "name": "ecomarket-app",
-    "slug": "ecomarket-app",
+    "name": "to-com-dor-doutor-app",
+    "slug": "to-com-dor-doutor-app",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/logo/ecomarket-logo.png",
+    "icon": "./assets/logo/lettering-logo.png",
     "userInterfaceStyle": "light",
     "splash": {
       "image": "./assets/splash.png",
@@ -19,7 +19,7 @@
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/logo/ecomarket-logo.png",
+        "foregroundImage": "./assets/logo/lettering-logo.png",
         "backgroundColor": "#ffffff"
       }
     },
