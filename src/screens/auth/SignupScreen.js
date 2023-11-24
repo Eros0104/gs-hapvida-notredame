@@ -12,9 +12,9 @@ import React, { useState } from "react";
 import { Ionicons } from "@expo/vector-icons";
 import InternetConnectionAlert from "react-native-internet-connection-alert";
 
-import { colors, network } from "../../constants";
+import { colors } from "../../constants";
 import CustomInput from "../../components/CustomInput";
-import header_logo from "../../assets/logo/ecomarket-logo.png";
+import logo from "../../assets/logo/lettering-logo.png";
 import CustomButton from "../../components/CustomButton";
 import CustomAlert from "../../components/CustomAlert/CustomAlert";
 
@@ -35,35 +35,27 @@ const SignupScreen = ({ navigation }) => {
     userType: "USER",
   });
 
-  var requestOptions = {
-    method: "POST",
-    headers: myHeaders,
-    body: raw,
-    redirect: "follow",
-  };
-
-  //method to post the user data to server for user signup using API call
   const signUpHandle = () => {
     if (email == "") {
-      return setError("Please enter your email");
+      return setError("Por favor, insira seu email");
     }
     if (name == "") {
-      return setError("Please enter your name");
+      return setError("Por favor, insira seu nome");
     }
     if (password == "") {
-      return setError("Please enter your password");
+      return setError("Por favor, insira sua senha");
     }
     if (!email.includes("@")) {
-      return setError("Email is not valid");
+      return setError("Email inválido");
     }
     if (email.length < 6) {
-      return setError("Email is too short");
+      return setError("Email é muito curto");
     }
     if (password.length < 5) {
-      return setError("Password must be 6 characters long");
+      return setError("A senha deve ter no mínimo 5 caracteres");
     }
     if (password != confirmPassword) {
-      return setError("password does not match");
+      return setError("As senhas não coincidem");
     }
   };
   return (
@@ -88,17 +80,17 @@ const SignupScreen = ({ navigation }) => {
           </TouchableOpacity>
         </View>
         <ScrollView style={{ flex: 1, width: "100%" }}>
-          <View style={styles.welconeContainer}>
-            <Image style={styles.logo} source={header_logo} />
+          <View style={styles.welcomeContainer}>
+            <Image style={styles.logo} source={logo} />
           </View>
           <View style={styles.screenNameContainer}>
             <View>
-              <Text style={styles.screenNameText}>Sign up</Text>
+              <Text style={styles.screenNameText}>Criar Conta</Text>
             </View>
             <View>
               <Text style={styles.screenNameParagraph}>
-                Create your account on EcoMarket to get access to millions of
-                products
+                Crie sua conta no "To com dor Doutor" e assuma o controle da sua
+                saúde.
               </Text>
             </View>
           </View>
@@ -107,7 +99,7 @@ const SignupScreen = ({ navigation }) => {
             <CustomInput
               value={name}
               setValue={setName}
-              placeholder={"Name"}
+              placeholder={"Nome"}
               placeholderTextColor={colors.muted}
               radius={5}
             />
@@ -122,7 +114,7 @@ const SignupScreen = ({ navigation }) => {
               value={password}
               setValue={setPassword}
               secureTextEntry={true}
-              placeholder={"Password"}
+              placeholder={"Senha"}
               placeholderTextColor={colors.muted}
               radius={5}
             />
@@ -130,17 +122,17 @@ const SignupScreen = ({ navigation }) => {
               value={confirmPassword}
               setValue={setConfirmPassword}
               secureTextEntry={true}
-              placeholder={"Confirm Password"}
+              placeholder={"Confirme sua senha"}
               placeholderTextColor={colors.muted}
               radius={5}
             />
           </View>
         </ScrollView>
         <View style={styles.buttomContainer}>
-          <CustomButton text={"Sign up"} onPress={signUpHandle} />
+          <CustomButton text={"Cadastrar"} onPress={signUpHandle} />
         </View>
         <View style={styles.bottomContainer}>
-          <Text>Already have an account?</Text>
+          <Text>Já tem uma conta?</Text>
           <Text
             onPress={() => navigation.navigate("login")}
             style={styles.signupText}
@@ -171,13 +163,9 @@ const styles = StyleSheet.create({
     justifyContent: "flex-start",
     alignItems: "center",
   },
-  welconeContainer: {
-    width: "100%",
-    display: "flex",
-    flexDirection: "column",
-    justifyContent: "center",
+  welcomeContainer: {
     alignItems: "center",
-    height: "15%",
+    marginBottom: 20,
   },
   formContainer: {
     flex: 2,
@@ -190,7 +178,8 @@ const styles = StyleSheet.create({
   },
   logo: {
     resizeMode: "contain",
-    width: 80,
+    width: 200,
+    height: 200,
   },
   forgetPasswordContainer: {
     marginTop: 10,
