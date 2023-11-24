@@ -58,13 +58,13 @@ const LoginScreen = ({ navigation }) => {
           <StatusBar></StatusBar>
           <View style={styles.welcomeContainer}>
             <View>
-              <Text style={styles.welcomeText}>Welcome to EcoMarket</Text>
+              <Text style={styles.welcomeText}>Tô com dor, Doutor!</Text>
               <Text style={styles.welcomeParagraph}>
-                Where economical meets Ecological!
+                Facilitando Benefícios, Cuidando de Você.
               </Text>
             </View>
             <View>
-              <Image style={styles.logo} source={header_logo} />
+              {/* <Image style={styles.logo} source={header_logo} /> */}
             </View>
           </View>
           <View style={styles.screenNameContainer}>
@@ -75,7 +75,7 @@ const LoginScreen = ({ navigation }) => {
             <CustomInput
               value={email}
               setValue={setEmail}
-              placeholder={"Username"}
+              placeholder={"Usuário"}
               placeholderTextColor={colors.muted}
               radius={5}
             />
@@ -83,7 +83,7 @@ const LoginScreen = ({ navigation }) => {
               value={password}
               setValue={setPassword}
               secureTextEntry={true}
-              placeholder={"Password"}
+              placeholder={"Senha"}
               placeholderTextColor={colors.muted}
               radius={5}
             />
@@ -92,7 +92,7 @@ const LoginScreen = ({ navigation }) => {
                 onPress={() => navigation.navigate("forgetpassword")}
                 style={styles.ForgetText}
               >
-                Forget Password?
+                Esqueceu sua senha?
               </Text>
             </View>
           </View>
@@ -101,12 +101,12 @@ const LoginScreen = ({ navigation }) => {
           <CustomButton text={"Login"} onPress={loginHandle} />
         </View>
         <View style={styles.bottomContainer}>
-          <Text>Don't have an account?</Text>
+          <Text>Não tem conta?</Text>
           <Text
             onPress={() => navigation.navigate("signup")}
             style={styles.signupText}
           >
-            signup
+            Cadastre-se
           </Text>
         </View>
       </KeyboardAvoidingView>
@@ -153,7 +153,7 @@ const styles = StyleSheet.create({
   welcomeParagraph: {
     fontSize: 16,
     fontWeight: "300",
-    color: colors.primary_shadow,
+    color: colors.textDark,
   },
   forgetPasswordContainer: {
     marginTop: 10,
