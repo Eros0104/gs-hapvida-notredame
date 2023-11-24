@@ -49,13 +49,15 @@ const LoginScreen = ({ navigation }) => {
 
   return (
     <InternetConnectionAlert onChange={(connectionState) => {}}>
-      <KeyboardAvoidingView
-        // behavior={Platform.OS === "ios" ? "padding" : "height"}
-        style={styles.container}
-      >
+      <KeyboardAvoidingView style={styles.container}>
         <ScrollView style={{ flex: 1, width: "100%" }}>
           <ProgressDialog visible={isloading} label={"Login ..."} />
           <StatusBar></StatusBar>
+
+          <View style={styles.logoContainer}>
+            <Image style={styles.logo} source={header_logo} />
+          </View>
+
           <View style={styles.welcomeContainer}>
             <View>
               <Text style={styles.welcomeText}>Tô com dor, Doutor!</Text>
@@ -63,10 +65,8 @@ const LoginScreen = ({ navigation }) => {
                 Facilitando Benefícios, Cuidando de Você.
               </Text>
             </View>
-            <View>
-              {/* <Image style={styles.logo} source={header_logo} /> */}
-            </View>
           </View>
+
           <View style={styles.screenNameContainer}>
             <Text style={styles.screenNameText}>Login</Text>
           </View>
@@ -196,5 +196,14 @@ const styles = StyleSheet.create({
     fontSize: 30,
     fontWeight: "800",
     color: colors.muted,
+  },
+  logoContainer: {
+    alignItems: "center",
+    marginBottom: 20,
+  },
+  logo: {
+    resizeMode: "contain",
+    width: 100,
+    height: 100,
   },
 });
