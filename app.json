@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "to-com-dor-doutor-app",
-    "slug": "to-com-dor-doutor-app",
+    "name": "health-app",
+    "slug": "health-app",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/logo/lettering-logo.png",
@@ -15,19 +15,27 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.pedrogoncalvesk.healthapp"
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/logo/lettering-logo.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.pedrogoncalvesk.healthapp"
     },
     "web": {
       "favicon": "./assets/favicon.png"
     },
     "runtimeVersion": {
       "policy": "sdkVersion"
-    }
+    },
+    "extra": {
+      "eas": {
+        "projectId": "5ae4bcf5-6f41-42d0-997b-19ea8937c546"
+      }
+    },
+    "owner": "pedrogoncalvesk"
   }
 }
